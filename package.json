@@ -1,0 +1,31 @@
+{
+  "name": "fe_admin",
+  "version": "1.0.0",
+  "description": "A testing repo, for converting the project's html pages from static to dynamic with react",
+  "main": "UsersTable.js",
+  "scripts": {
+    "start": "npm run server",
+    "server": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emadsi/FE_Admin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emadsi/FE_Admin/issues"
+  },
+  "homepage": "https://github.com/emadsi/FE_Admin#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.22",
+    "@fortawesome/free-solid-svg-icons": "^5.10.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3"
+  }
+}
