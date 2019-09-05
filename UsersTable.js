@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import UsersTableComponent from './UsersTableComponent'
 
 export default class UsersTable extends React.Component{
     constructor(){
