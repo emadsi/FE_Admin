@@ -15,7 +15,9 @@ export default class UsersTable extends React.Component{
                         Users
                     </h1>
                 </div>
-                
+                {/* Fadi adding this Comment. */}
+                {/* I am not familiar with mg-auto class. */}
+                {/* use m-auto for margin-auto instead.*/}
                 <div className="row offset-md-4 mb-2 col-md-3 mg-auto">
                     <div className="card">
                         <div className="card-body">
@@ -76,7 +78,7 @@ export default class UsersTable extends React.Component{
                         </div>
                     </form>
                 </div>
-
+                {/* typo in the classes list? "-"  */}
                 <div className="row - justify-content-center">
                     <table className="table  col-md-6 mt-4" id="usersTable">
                         <thead className="thead-dark">
@@ -89,7 +91,8 @@ export default class UsersTable extends React.Component{
                             </tr>
                         </thead>
                         <tbody>
-                            <UsersTableComponent />
+                            <UsersTableComponent /> {/* Whats the difference between UserTable and UsersTableComponent?
+                                                        Can you please comment your code? */}
                         </tbody>
                     </table>
                 </div>
