@@ -1,39 +1,73 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import UsersTableRow from './UsersTableRow'
+import Data, {USERS} from './data.js'
+
+const AdvancedSearchStyle = {
+    cursor : "pointer",
+    color : "blue",
+    textDecoration : "underline"
+
+}
+const AdvancedSearchOptionsStyle = {
+    display : "none"
+}
 
 export default class UsersTable extends React.Component{
     constructor(){
         super();
+        this.state ={
+            users : []
+        }
+    }
+
+    componentDidMount(){
+        this.setState({
+            users : USERS
+        });
+    }
+
+    showOptions(){
+        const advancedSearchOptions = document.querySelector('#advancedSearchOptions');
+
+        if(advancedSearchOptions.style.display == "flex"){
+            advancedSearchOptions.style.display = "none";
+        }
+        else{
+            advancedSearchOptions.style.display = "flex";
+        }
+        
     }
 
     render(){
         return(
             <div>
-                <div className="row justify-content-center">
+                {/* <div className="row justify-content-center">
                     <h1 className="alert alert-light" role="alert">
                         Users
                     </h1>
-                </div>
-                {/* Fadi adding this Comment. */}
-                {/* I am not familiar with mg-auto class. */}
-                {/* use m-auto for margin-auto instead.*/}
-                <div className="row offset-md-4 mb-2 col-md-3 mg-auto">
+                </div> */}
+                {/* A block for displaying the general result info */}
+                {/* <div className="row offset-md-4 mb-2 col-md-3 m-auto">
                     <div className="card">
                         <div className="card-body">
                             This is some text within a card body.
                         </div>
                     </div>
-                </div>
+                </div> */}
                 
-                <div className="row justify-content-md-center ">
+                <div className="col-5 m-auto justify-content-md-center">
                     <form>
-                        <div className="input-group lg-10">
+                        <div className="form-row input-group lg-10 m-auto">
                             <input type="text" className="form-control" placeholder="Search by name" aria-label="Search by name" aria-describedby="button-addon2" />
                             <div className="input-group-append">
-                                <button className="btn btn-outline-success" type="button" id="button-addon2">Button</button>
+                                <button className="btn btn-outline-success" type="button" id="button-addon2">Search</button>
                             </div>
                         </div>
-                        <div className="form-row">
+                        <div >
+                            <a style={AdvancedSearchStyle} className="justify-content-md-center offset-md-4" onClick={this.showOptions}>Advanced Search</a>
+                        </div>
+                        <div className="form-row m-auto" id="advancedSearchOptions" style={AdvancedSearchOptionsStyle}>
                             <div className="dropdown mr-1 mt-2">
                                 <button type="button" className="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
                                     Role
@@ -45,14 +79,14 @@ export default class UsersTable extends React.Component{
                                 </div>
                             </div>
                             <div className="dropdown mr-1 mt-2">
-                                    <button type="button" className="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
-                                        Department
-                                    </button>
-                                    <div className="dropdown-menu" aria-labelledby="dropdownMenuOffset">
-                                      <a className="dropdown-item" href="#">Manager</a>
-                                      <a className="dropdown-item" href="#">Employee</a>
-                                      <a className="dropdown-item" href="#">Admin</a>
-                                    </div>
+                                <button type="button" className="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
+                                    Department
+                                </button>
+                                <div className="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+                                    <a className="dropdown-item" href="#">Manager</a>
+                                    <a className="dropdown-item" href="#">Employee</a>
+                                    <a className="dropdown-item" href="#">Admin</a>
+                                </div>
                             </div>
                             <div className="dropdown mr-1 mt-2">
                                     <button type="button" className="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">
@@ -77,9 +111,9 @@ export default class UsersTable extends React.Component{
                         </div>
                     </form>
                 </div>
-                {/* typo in the classes list? "-"  */}
-                <div className="row - justify-content-center">
-                    <table className="table  col-md-6 mt-4" id="usersTable">
+                
+                <div className="row">
+                    <table className="table mt-2" id="usersTable">
                         <thead className="thead-dark">
                             <tr>
                                 <th>ID</th>
@@ -90,8 +124,12 @@ export default class UsersTable extends React.Component{
                             </tr>
                         </thead>
                         <tbody>
-                            <UsersTableComponent /> {/* Whats the difference between UserTable and UsersTableComponent?
-                                                        Can you please comment your code? */}
+                            {/* A Component for dynamically filling the table*/}
+                            {this.state.users.map(user => <UsersTableRow 
+                                                    key={user.employeeNumber}
+                                                    user={user}
+                                                    />)
+                        }  
                         </tbody>
                     </table>
                 </div>
@@ -101,6 +139,6 @@ export default class UsersTable extends React.Component{
     }
 }
 
-ReactDom.render(<UsersTable/>,
-    document.querySelector('#container')
-    );
+// ReactDom.render(<UsersTable/>,
+//     document.querySelector('#container')
+//     );
