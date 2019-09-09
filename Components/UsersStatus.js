@@ -9,8 +9,8 @@ export default class UsersStatus extends React.Component{
         return(
 
             <div>
-                <div className="row mb-2 d-flex align-items-stretch">
-                    <div className="col-sm-3">
+                <div className="row mb-2 d-flex align-items-stretch justify-content-center">
+                    <div className="col-sm-3 w-100">
                         <div className="card text-center" style={{backgroundColor : "rgb(220,220,220)"}}>
                             <div className="card-body">
                                 <FontAwesomeIcon 
@@ -23,7 +23,7 @@ export default class UsersStatus extends React.Component{
                             </div>
                         </div>
                     </div>
-                    <div className="col-sm-3">
+                    <div className="col-sm-3 w-100">
                         <div className="card text-center" style={{backgroundColor : "rgb(220,220,220)"}}>
                             <div className="card-body">
                                 <FontAwesomeIcon
@@ -36,7 +36,7 @@ export default class UsersStatus extends React.Component{
                             </div>
                         </div>
                     </div>
-                    <div className="col-sm-3">
+                    <div className="col-sm-3 w-100">
                         <div className="card text-center" style={{backgroundColor : "rgb(220,220,220)"}}>
                             <div className="card-body">
                                 <FontAwesomeIcon
@@ -49,7 +49,7 @@ export default class UsersStatus extends React.Component{
                             </div>
                         </div>
                     </div>
-                    <div className="col-sm-3">
+                    <div className="col-sm-3 w-100">
                         <div className="card text-center" style={{backgroundColor : "rgb(220,220,220)"}}>
                             <div className="card-body">
                                 <FontAwesomeIcon

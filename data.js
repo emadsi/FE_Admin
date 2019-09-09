@@ -34,47 +34,59 @@
 
 export const USERS=[
 {
-	employeeNumber: '1',
+	id : 1,
+	employeeNumber: 1144,
 	firstName:"Emad",
 	lastName:"Silawi",
 	roles: ["Employee","Manager","Amin"],
 	department:"R&D",
-	workSite:"Nazareth"
+	workSite:"Nazareth",
+	deactivated: true
 },{
-	employeeNumber: '2',
+	id : 2,
+	employeeNumber: 233,
 	firstName:"Fadi",
 	lastName:"Mohammad",
 	roles:"Team Leader",
 	department:"R&D",
-	workSite:"Nazareth"
+	workSite:"Nazareth",
+	deactivated: true
 },{
-	employeeNumber: '3',
-	firstName:"Chris",
+	id : 3,
+	employeeNumber: 362,
+	firstName:"Chis",
 	lastName:"Issa",
 	roles:"Employee",
 	department:"QA Automation",
-	workSite:"Ra'anana"
+	workSite:"Ra'anana",
+	deactivated: false
 },{
-	employeeNumber: '4',
+	id : 4,
+	employeeNumber: 445,
 	firstName:"Samer",
 	lastName:"Saida",
 	roles:"Employee",
 	department:"DB Analysis",
-	workSite:"Nazareth"
+	workSite:"Nazareth",
+	deactivated: false
 },{
-	employeeNumber: '5',
+	id : 5,
+	employeeNumber: 345,
 	firstName:"Shahar",
 	lastName:"Grauman",
 	roles:"Manager",
 	department:"R&D",
-	workSite:"Nazareth"
+	workSite:"Nazareth",
+	deactivated: true
 },{
-	employeeNumber: '6',
+	id : 6,
+	employeeNumber: 12,
 	firstName:"Ezer",
 	lastName:"Biton",
 	roles:"CEO",
 	department:"Finance",
-	workSite:"Ra'anana"
+	workSite:"Ra'anana",
+	deactivated: false
 },
 ]
 
